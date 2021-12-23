@@ -78,8 +78,15 @@ class _MainScreenState extends State<MainScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.baseline,
                           textBaseline: TextBaseline.alphabetic,
-                          children: <Widget>[],
+                          children: <Widget>[
+                            Text('Slider', style: kLabelText,),
+                            
+                          ],
                         ),
+                        Text(
+                              height.toString(),
+                              style: kNumberText,
+                            ),
                         SliderTheme(
                           data: SliderTheme.of(context).copyWith(
                             thumbShape: RoundSliderThumbShape(
@@ -97,6 +104,7 @@ class _MainScreenState extends State<MainScreen> {
                             min: 80,
                             max: 320,
                             divisions: 5,
+                            thumbColor: Colors.green,
                             onChanged: (double changeHeight) {
                               setState(() {
                                 height = changeHeight.round();
@@ -175,7 +183,12 @@ class _MainScreenState extends State<MainScreen> {
           ),
           FloatingActionButton(
             onPressed: () {},
-            child: Icon(Icons.favorite, color: Colors.pink,),
+            child: Icon(Icons.add, color: Colors.pink,),
+            backgroundColor: Colors.white,
+          ),
+           FloatingActionButton(
+            onPressed: () {},
+            child: Icon(Icons.remove, color: Colors.pink,),
             backgroundColor: Colors.white,
           ),
         ],
